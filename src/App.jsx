@@ -13,6 +13,7 @@ import { MdScreenShare as ScreenShareIcon } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Header from "./components/Header/v1/Header";
 import Sidebar from "./components/SideBar/v1/sidebar";
+import MainLayout from "./layout/MainLayout";
 
 const roomId = uuid();
 
@@ -55,11 +56,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex">
-      <Sidebar />
-      <div className="w-full">
-        <Header />
-
+    <MainLayout>
+      <div>
         <div className="bg-darkBlue1 min-h-screen text-slate-400">
           <div className="flex h-full md:gap-2 flex-col md:flex-row">
             <div className="p-3 w-auto h-auto items-center">
@@ -139,7 +137,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+    </MainLayout>
   );
 };
 

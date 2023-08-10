@@ -1,0 +1,19 @@
+import React from "react";
+import Header from "../components/Header/v1/Header";
+import Sidebar from "../components/SideBar/v1/sidebar";
+
+function MainLayout({ children }) {
+  return (
+    <>
+      <div className="flex">
+        <Sidebar />
+        <div className="w-full">
+          <Header />
+          {children}
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default MainLayout;
