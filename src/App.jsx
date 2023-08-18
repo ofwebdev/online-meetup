@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HomeCard from "./components/HomeCard/v1/HomeCard";
-
-// import { useAuth } from "../context/AuthContext";
 
 import { v4 as uuid } from "uuid";
 
@@ -11,14 +9,14 @@ import { MdAddBox as JoinCallIcon } from "react-icons/md";
 import { BsCalendarDate as CalenderIcon } from "react-icons/bs";
 import { MdScreenShare as ScreenShareIcon } from "react-icons/md";
 import { Link } from "react-router-dom";
-import Header from "./components/Header/v1/Header";
-import Sidebar from "./components/SideBar/v1/sidebar";
 import MainLayout from "./layout/MainLayout";
+import { AuthContext } from "./provider/AuthProvider";
+import ScreenRecorder from "./components/ScreenRecorder";
 
 const roomId = uuid();
 
 const Home = () => {
-  // const { user } = useAuth();
+  const { user } = useContext(AuthContext);
 
   const months = [
     "January",
@@ -111,9 +109,9 @@ const Home = () => {
             <div className="flex-grow md:h-screen md:border-l-2 border-lightGray p-3 md:p-4">
               <div className="relative md:h-52 w-full bg-violet-700 rounded md:rounded-2xl p-3">
                 <div className="md:absolute bottom-2 left-2 md:bottom-6 md:left-6">
-                  {/* {user && (
-                <h1 className="text-4xl">Welcome {user?.displayName}</h1>
-              )} */}
+                  {user && (
+                    <h1 className="text-4xl">Welcome {user?.displayName}</h1>
+                  )}
 
                   <p className="md:text-7xl text-4xl text-white">
                     {`${
@@ -133,6 +131,8 @@ const Home = () => {
                   </p>
                 </div>
               </div>
+
+              <ScreenRecorder />
             </div>
           </div>
         </div>

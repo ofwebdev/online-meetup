@@ -9,7 +9,7 @@ import { FiSettings as SettingIcon } from "react-icons/fi";
 
 const Sidebar = () => {
   return (
-    <div className="bg-indigo-700 flex flex-col items-center justify-between p-2 w-[70px] h-screen border-r-2 border-lightGray">
+    <div className="bg-indigo-700 flex flex-col items-center justify-between p-2 w-[70px] border-r-2 border-lightGray">
       <div className="my-3">
         <Link to="/">
           <img

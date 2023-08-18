@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Page404 from "./page/Page404";
-import Login from "./page/Login";
+import Room from "./page/Room";
 
 export const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
     element: <Page404 />,
   },
   {
-    path: "/login",
-    element: <Login />,
+    path: "/room/:roomID",
+    element: <Room />,
   },
 ]);
